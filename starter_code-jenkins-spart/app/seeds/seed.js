@@ -4,6 +4,7 @@ var faker = require('faker');
 
 if(process.env.DB_HOST) {
   mongoose.connect(process.env.DB_HOST);
+  console.log('works')
 
   Post.remove({} , function(){
     console.log('Database Cleared');
@@ -22,7 +23,6 @@ if(process.env.DB_HOST) {
         mongoose.connection.close();
         console.log("Database Seeded");
       }
-    }); 
+    });
   }
 }
-
